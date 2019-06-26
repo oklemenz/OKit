@@ -1,6 +1,6 @@
 //
 //  ModelTransient.swift
-//  ModelBasedApp
+//  OKit
 //
 //  Created by Klemenz, Oliver on 15.03.19.
 //  Copyright © 2019 Klemenz, Oliver. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  ModelSecureStore.swift
-//  ModelBasedApp
+//  OKit
 //
 //  Created by Klemenz, Oliver on 20.01.17.
 //  Copyright © 2017 Klemenz, Oliver. All rights reserved.

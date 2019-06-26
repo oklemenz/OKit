@@ -1,6 +1,6 @@
 //
 //  ModelImage.swift
-//  ModelBasedApp
+//  OKit
 //
 //  Created by Klemenz, Oliver on 03.03.19.
 //  Copyright © 2019 Klemenz, Oliver. All rights reserved.

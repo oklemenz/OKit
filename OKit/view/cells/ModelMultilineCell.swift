@@ -1,6 +1,6 @@
 //
 //  ModelMultilineCell.swift
-//  ModelBasedApp
+//  OKit
 //
 //  Created by Klemenz, Oliver on 29.04.19.
 //  Copyright © 2019 Klemenz, Oliver. All rights reserved.

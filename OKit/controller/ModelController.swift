@@ -1,6 +1,6 @@
 //
 //  ModelController.swift
-//  ModelBasedApp
+//  OKit
 //
 //  Created by Klemenz, Oliver on 11.03.19.
 //  Copyright © 2019 Klemenz, Oliver. All rights reserved.

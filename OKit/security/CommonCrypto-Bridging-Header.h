@@ -1,6 +1,6 @@
 //
 //  CommonCrypto-Bridging-Header.h
-//  ModelBasedApp
+//  OKit
 //
 //  Created by Klemenz, Oliver on 26.01.17.
 //  Copyright © 2017 Klemenz, Oliver. All rights reserved.
