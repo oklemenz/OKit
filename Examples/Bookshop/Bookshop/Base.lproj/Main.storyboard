@@ -1,0 +1,1683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TQu-MH-6jt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Books-->
+        <scene sceneID="i0n-Jb-jyS">
+            <objects>
+                <tableViewController id="MRB-ZL-glO" customClass="ModelListTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="787-oO-POX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="model" textLabel="MOB-l5-tay" detailTextLabel="Kx8-46-Cla" style="IBUITableViewCellStyleValue1" id="6zc-yx-gaY" customClass="ModelTableCell" customModule="OKit">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6zc-yx-gaY" id="VN1-Ie-PVf">
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MOB-l5-tay">
+                                            <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kx8-46-Cla">
+                                            <rect key="frame" x="263" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="detailPath" value="formatMarked"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="imagePath" value="icon"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accyText" value="#Mark"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accyIcon" value="#book"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accyTap" value="setAsMarked()"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accyShow" value="!marked"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="nRQ-zc-mIf" kind="show" identifier="model" id="cvc-6Q-gbE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="MRB-ZL-glO" id="bO8-2q-5oB"/>
+                            <outlet property="delegate" destination="MRB-ZL-glO" id="PSa-pA-CuB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Books" id="GXC-HM-NIy">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="Hff-XE-2mC" customClass="ModelMenuBarButtonItem" customModule="OKit"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="dKP-0b-oSE" customClass="ModelBarButtonItem" customModule="OKit">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="tapPath" value="openDirectory"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
+                    </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="type" value="Book"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="dataPath" value="books"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="%Book Shop"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleCount" value="books.@count"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="subTitleObject" value="%Book"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="rowSort" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="searchPath" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="group" value="date"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="groupName" value="date/formatRelativeDate"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="groupSortAsc" value="#false"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="addName" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="quickName" value="#Mark"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="quickTap" value="setAsMarked()"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="quickEnabled" value="!marked"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="more" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="selectPath" value="marked"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contextPath" value="/"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="moreActions" value="%Activate,%Set as Marked"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="moreActionsTap" value="activate,setAsMarked()"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="moreActionsEnabled" value=",!marked"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="helpView" destination="YFH-Y8-sto" id="UJx-D9-je8"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfH-Q1-dHB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="YFH-Y8-sto" customClass="ModelHelpView" customModule="OKit">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQS-tq-zVe">
+                            <rect key="frame" x="102" y="53.5" width="36" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="gQS-tq-zVe" firstAttribute="centerY" secondItem="YFH-Y8-sto" secondAttribute="centerY" id="3Wo-Fv-hcs"/>
+                        <constraint firstItem="gQS-tq-zVe" firstAttribute="centerX" secondItem="YFH-Y8-sto" secondAttribute="centerX" id="NTg-Op-7kw"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="t7m-Eb-Wgu"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="3073" y="-1128"/>
+        </scene>
+        <!--Book-->
+        <scene sceneID="u97-kT-3gF">
+            <objects>
+                <tableViewController id="nRQ-zc-mIf" customClass="ModelDetailTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Tx8-LO-lSe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="General" id="k2K-at-ncs">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Cg1-Ym-Lhh" customClass="ModelTextCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cg1-Ym-Lhh" id="kSp-dH-irg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="%Name"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="textPath" value="name"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="control" destination="gWh-Cy-o38" id="j1c-lj-96B"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="P8o-WB-ZOg" customClass="ModelSwitchCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P8o-WB-ZOg" id="32i-hx-1nq">
+                                            <rect key="frame" x="0.0" y="0.0" width="308" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="formatMarked"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="onPath" value="marked"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="YRm-BM-LFH" detailTextLabel="v4b-Ug-vQE" style="IBUITableViewCellStyleValue1" id="VhS-9F-zcG" customClass="ModelTableCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VhS-9F-zcG" id="EWz-Au-IJ0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YRm-BM-LFH">
+                                                    <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v4b-Ug-vQE">
+                                                    <rect key="frame" x="315" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="%Release Date"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailPath" value="date/formatDate"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectNextRow" value="#1"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="PV4-k4-Hkh" style="IBUITableViewCellStyleDefault" id="nXx-Yi-6K3" customClass="ModelDateCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="187.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nXx-Yi-6K3" id="zZn-f9-KDG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PV4-k4-Hkh">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="datePath" value="date"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heightDisplay" value="#0"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heightEdit" value="#0"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="minDatePath" value="#2019-01-01T00:00:00+0000"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="maxDatePath" value="#2019-12-31T00:00:00+0000"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bgj-TZ-r6P" customClass="ModelMultilineCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="231.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bgj-TZ-r6P" id="A94-uJ-ZmW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="textPath" value="comment"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="%Comment"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heightDisplay" value="#132"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6ou-wG-6UA" customClass="ModelSegmentCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="275.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6ou-wG-6UA" id="Yvg-Xu-dBe">
+                                            <rect key="frame" x="0.0" y="0.0" width="159" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="segmentsPath" value="%Non-Fiction,%Fiction,%Other"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectIndexPath" value="type"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="%Type"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="width" value="#250"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="hLi-Kl-rwR" detailTextLabel="CIQ-wo-ZU8" style="IBUITableViewCellStyleValue1" id="7bx-3o-ZzD" customClass="ModelTableCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="319.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7bx-3o-ZzD" id="rv6-Ab-ONs">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hLi-Kl-rwR">
+                                                    <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CIQ-wo-ZU8">
+                                                    <rect key="frame" x="315" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="%Genre"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailPath" value="genre/ref/name"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectNextRow" value="#1"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="tmE-aS-AVj" style="IBUITableViewCellStyleDefault" id="pWw-VC-x86" customClass="ModelPickerCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="363.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pWw-VC-x86" id="jPQ-GX-5Ua">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tmE-aS-AVj">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="dataPath" value="/genres"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="namePath" value="name"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectionPath" value="genre"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heightDisplay" value="#0"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heightEdit" value="#0"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Stock" id="nOE-Ad-cZ8">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Xeb-we-5T2" customClass="ModelSliderCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="463.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xeb-we-5T2" id="e4V-ff-d1B">
+                                            <rect key="frame" x="0.0" y="0.0" width="159" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="%Price: ,price/round2, %EUR"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="valuePath" value="price"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="minValuePath" value="#0"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="maxValuePath" value="#100"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="minImagePath" value="#book"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="maxImagePath" value="#book"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="vjv-Vi-wAN" detailTextLabel="zjt-bV-5us" style="IBUITableViewCellStyleValue1" id="LM5-0N-vQr" customClass="ModelStepperCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="507.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LM5-0N-vQr" id="yvb-xU-SqO">
+                                            <rect key="frame" x="0.0" y="0.0" width="265" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vjv-Vi-wAN">
+                                                    <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zjt-bV-5us">
+                                                    <rect key="frame" x="221" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="%Copies"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="valuePath" value="copies"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="minValuePath" value="#0"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="maxValuePath" value="#10"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="stepValuePath" value="#1"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="editPath" value="%Copies: ,copies"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailPath" value="copies/suffixPlural(#piece)"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="controlInDisplay" value="#false"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Details" id="Q5A-2u-IVR">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="QVx-ay-aHN" detailTextLabel="bgW-1X-I07" style="IBUITableViewCellStyleValue1" id="hri-X6-wop" customClass="ModelTableCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="607.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hri-X6-wop" id="9PJ-9p-s1C">
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QVx-ay-aHN">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bgW-1X-I07">
+                                                    <rect key="frame" x="296" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailPath" value="authors.@count/suffixPlural(#entry)"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="%Authors"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectionPath" value="authors"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="showEdit" value="marked"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="65A-ZA-cQN" kind="show" identifier="model" id="rfp-SJ-2Nq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="slM-4I-bUR" style="IBUITableViewCellStyleDefault" id="Taj-Co-0fQ" customClass="ModelTableCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="651.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Taj-Co-0fQ" id="Mvt-ZQ-cN7">
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="slM-4I-bUR">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="%Lead Author"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectionPath" value="author"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="showEdit" value="marked"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="accessoryView" destination="vbc-ir-OCD" id="UOp-Z5-kT5"/>
+                                            <outlet property="editingAccessoryView" destination="vbc-ir-OCD" id="IsY-zP-KJ8"/>
+                                            <segue destination="qH3-BH-NMU" kind="show" identifier="model" id="2uU-Or-O1T"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Dates" id="Osh-Cn-ujy">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="haV-Sq-dri" detailTextLabel="fLL-Tu-oZK" style="IBUITableViewCellStyleValue1" id="eu9-Mf-hTk" customClass="ModelTableCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="751.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eu9-Mf-hTk" id="LK9-LX-VdZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="haV-Sq-dri">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fLL-Tu-oZK">
+                                                    <rect key="frame" x="296" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailPath" value="dates.@count"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="%Dates"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectionPath" value="authors"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="vgo-Tb-f7s" kind="show" id="FLj-iQ-rXs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="nRQ-zc-mIf" id="WVh-rz-jsu"/>
+                            <outlet property="delegate" destination="nRQ-zc-mIf" id="vd7-cM-Pqp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Book" largeTitleDisplayMode="always" id="nSc-KL-YZj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="HRt-dw-0BB" customClass="ModelBarButtonItem" customModule="OKit">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="tapPath" value="setMarkedWithPrompt()"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="enabledPath" value="!marked"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
+                    </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="%Book"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="sectionFooters" value=",,%Specifies the lead author of the book"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="subTitlePath" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="sectionsShowEdit" value=",,marked"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleTap" value="activate()"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cx9-gB-0rM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="gWh-Cy-o38">
+                    <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vbc-ir-OCD" customClass="ModelButton" customModule="OKit">
+                    <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="iconPath" value="#book"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="ref/name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="showPath" value="refKey"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contextPath" value="author"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="FtV-2M-nmC" kind="show" identifier="model" id="pms-tE-Dw8"/>
+                    </connections>
+                </button>
+            </objects>
+            <point key="canvasLocation" x="3977" y="-1128"/>
+        </scene>
+        <!--Books-->
+        <scene sceneID="2ow-Rz-lw4">
+            <objects>
+                <navigationController id="q1i-xd-mln" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Books" image="book" id="PPT-tB-cgV"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ljw-Qe-Uct">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1ec-GG-hEm">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="MRB-ZL-glO" kind="relationship" relationship="rootViewController" id="QbI-LC-QWA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1P-La-zuw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2225" y="-1128"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="0f9-Gt-nw7">
+            <objects>
+                <tableViewController id="6Oe-Lr-6ZC" customClass="ModelMenuTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nGT-BW-UgO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="model" textLabel="TPq-pR-Q9Q" style="IBUITableViewCellStyleDefault" id="HKe-YB-ZFr" customClass="ModelTableCell" customModule="OKit">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HKe-YB-ZFr" id="Qyj-mf-rFC">
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TPq-pR-Q9Q">
+                                            <rect key="frame" x="16" y="0.0" width="291" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="aV1-Ej-E2n" kind="show" id="Bfo-Si-8y6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6Oe-Lr-6ZC" id="qcd-Ky-XSf"/>
+                            <outlet property="delegate" destination="6Oe-Lr-6ZC" id="mGy-KP-ada"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="rvW-5n-LtW"/>
+                        <barButtonItem title="Settings" id="h24-kf-P7F" customClass="ModelBarButtonItem" customModule="Bookshop" customModuleProvider="target">
+                            <connections>
+                                <segue destination="q3j-a4-bZS" kind="presentation" id="tKf-D9-pNk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Backups" id="7QL-68-4uU" customClass="ModelBarButtonItem" customModule="Bookshop" customModuleProvider="target">
+                            <connections>
+                                <segue destination="21u-E1-Ak7" kind="presentation" id="SIc-Wo-Ehv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Home" id="H68-5j-9ah">
+                            <connections>
+                                <action selector="navigateToHomeWithSender:" destination="6Oe-Lr-6ZC" id="xkn-iw-8xQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="VQJ-BI-VpU"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Menu" id="PGS-PX-TZG">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="mKs-gt-YAl" customClass="ModelMenuBarButtonItem" customModule="OKit"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="dataPath" value="groups"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contextPath" value="directory&gt;/"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="#Directory"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleCount" value="groups.@count"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="subTitleObject" value="%Group"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="type" value="GroupDefer"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="searchPath" value="name"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="50v-Tj-QbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492" y="-257"/>
+        </scene>
+        <!--Model Application Contoller-->
+        <scene sceneID="AKF-AL-VqC">
+            <objects>
+                <viewController id="TQu-MH-6jt" customClass="ModelApplicationContoller" customModule="OKit" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NHG-4j-vqs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="sqT-dR-afa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IuT-7a-fYY"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="protectionText" value="#OKit Demo App"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="protectionImage" value="#book"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="themeName" value="themeName"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="encryption" value="encryption"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="protectionTimeout" value="protectionTimeout/ref/id"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contextPath" value="settings&gt;/"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="protection" value="protection"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gIQ-WB-huH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1214" y="-259"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="sfF-R2-j4G">
+            <objects>
+                <tabBarController storyboardIdentifier="home" id="K1h-2M-5TV" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nTL-f2-fkw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="q1i-xd-mln" kind="relationship" relationship="viewControllers" id="KLc-8T-SzI"/>
+                        <segue destination="rPY-jj-Ixi" kind="relationship" relationship="viewControllers" id="WHm-WZ-9PG"/>
+                        <segue destination="np2-kF-Ye1" kind="relationship" relationship="viewControllers" id="x0L-wG-Jfd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5m-iq-5bn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1366" y="-257"/>
+        </scene>
+        <!--Authors-->
+        <scene sceneID="PUH-Cj-fdR">
+            <objects>
+                <tableViewController id="pMI-un-cc4" customClass="ModelListTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2SY-Wk-jLJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="model" id="SBI-Pe-vNl" customClass="ModelTableCell" customModule="OKit">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SBI-Pe-vNl" id="f5K-kK-x1I">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="imagePath" value="icon"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="ibc-Ya-qY0" kind="show" identifier="model" id="nw2-O0-BL2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="pMI-un-cc4" id="47a-Mb-9NE"/>
+                            <outlet property="delegate" destination="pMI-un-cc4" id="i4p-cM-KBH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Authors" id="mg8-wM-3iF">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="Zfy-pT-Viz" customClass="ModelMenuBarButtonItem" customModule="OKit"/>
+                    </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="type" value="Author"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="dataPath" value="authors"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="%Directory"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleCount" value="authors.@count"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="subTitleObject" value="%Author"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="rowSort" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="group" value="name/initial"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="index" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="groupSortAsc" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contextPath" value="directory&gt;/"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="searchPath" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="addNav" value="#true"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="guu-DL-ifK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3072.8000000000002" y="-257.72113943028489"/>
+        </scene>
+        <!--Author-->
+        <scene sceneID="YDR-xq-KfS">
+            <objects>
+                <tableViewController id="ibc-Ya-qY0" customClass="ModelDetailTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="3ZP-8M-cea">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="General" id="c65-7y-1Fs">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ruf-Fv-8G1" customClass="ModelTextCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ruf-Fv-8G1" id="pou-WR-kbt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="textPath" value="name"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="ibc-Ya-qY0" id="WKS-WU-xGW"/>
+                            <outlet property="delegate" destination="ibc-Ya-qY0" id="i58-yN-8Dy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Author" largeTitleDisplayMode="always" id="8nC-aH-xww"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="name"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X3u-J4-9Qy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3977" y="-258"/>
+        </scene>
+        <!--Authors-->
+        <scene sceneID="3fq-F6-w1y">
+            <objects>
+                <navigationController id="rPY-jj-Ixi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Authors" image="book" id="YN7-5i-HhP"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ODL-98-hs3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pMI-un-cc4" kind="relationship" relationship="rootViewController" id="tOe-nX-eMI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c3n-HP-mVO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2225" y="-258"/>
+        </scene>
+        <!--Groups-->
+        <scene sceneID="9VA-Gl-Eeq">
+            <objects>
+                <tableViewController id="JZE-tj-Cjm" customClass="ModelListTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="QWG-e4-uiY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="model" textLabel="obe-Wh-Vss" style="IBUITableViewCellStyleDefault" id="2Fp-ZU-8ge" customClass="ModelTableCell" customModule="OKit">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Fp-ZU-8ge" id="0IM-c5-GoY">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="obe-Wh-Vss">
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="imagePath" value="icon"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ribbonColor" value="color"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="8Tf-Na-S76" kind="show" identifier="model" id="aBb-Pb-fQW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="JZE-tj-Cjm" id="xMj-vt-dPP"/>
+                            <outlet property="delegate" destination="JZE-tj-Cjm" id="4jh-pb-Vm3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Groups" id="3ot-Bv-TEV">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="kaO-L3-LQo" customClass="ModelMenuBarButtonItem" customModule="OKit"/>
+                    </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="type" value="GroupDefer"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="dataPath" value="groups"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="%Directory"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleCount" value="groups.@count"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="subTitleObject" value="%Group"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contextPath" value="directory&gt;/"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="reorder" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="addName" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="addAppend" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Group"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="searchPath" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="searchFilters" value="A,B"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="searchFilterPath" value="name/initial"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ed2-mM-OcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3073" y="531"/>
+        </scene>
+        <!--Group-->
+        <scene sceneID="jL2-GY-MQ9">
+            <objects>
+                <tableViewController id="8Tf-Na-S76" customClass="ModelDetailTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="jbU-yX-FMe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="General" id="vfa-po-FPE">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9B9-Pg-2IW" customClass="ModelTextCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9B9-Pg-2IW" id="3cL-Qe-CXy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="textPath" value="name"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="%Name"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fGc-uP-lNW" customClass="ModelTableCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGc-uP-lNW" id="UAn-2b-kpP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="status"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Details" id="1wi-tC-jJi">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="8Uf-sm-4LW" detailTextLabel="Xp7-Y0-8zQ" style="IBUITableViewCellStyleValue1" id="X4P-4X-auM" customClass="ModelTableCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="199.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X4P-4X-auM" id="6Jf-Vc-j5k">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Uf-sm-4LW">
+                                                    <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xp7-Y0-8zQ">
+                                                    <rect key="frame" x="296" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="%Authors"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailPath" value="authors.@count"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="CZq-Np-51i" kind="show" identifier="model" id="eqR-PM-5or"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="8Tf-Na-S76" id="br8-9V-qqC"/>
+                            <outlet property="delegate" destination="8Tf-Na-S76" id="30S-4R-Xyz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Group" largeTitleDisplayMode="always" id="W1W-fI-vAd"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="%Group"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contextPath" value="group"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="subTitlePath" value="name"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cfx-Ra-AGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3977" y="530"/>
+        </scene>
+        <!--Groups-->
+        <scene sceneID="5Ar-jG-xvL">
+            <objects>
+                <navigationController id="np2-kF-Ye1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Groups" image="book" id="e5N-xV-BZa"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="URR-9h-U3c">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JZE-tj-Cjm" kind="relationship" relationship="rootViewController" id="Agp-GQ-hhV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jpw-TR-baT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2225" y="531"/>
+        </scene>
+        <!--Authors-->
+        <scene sceneID="ac9-f1-Ybr">
+            <objects>
+                <tableViewController id="65A-ZA-cQN" customClass="ModelListTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="72O-tr-EYB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="model" textLabel="5FB-A4-zyn" style="IBUITableViewCellStyleDefault" id="blT-fB-bc4" customClass="ModelTableCell" customModule="OKit">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="blT-fB-bc4" id="fBo-SU-aFg">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5FB-A4-zyn">
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="contextPath" value="ref"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="FtV-2M-nmC" kind="show" id="hfb-UB-8uc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="65A-ZA-cQN" id="GUX-Sc-Y9q"/>
+                            <outlet property="delegate" destination="65A-ZA-cQN" id="0JT-ZG-DS8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Authors" id="tqa-IT-xBe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iAm-eK-bfU">
+                            <connections>
+                                <segue destination="Ghr-d9-8Uy" kind="presentation" identifier="model" id="mUC-P8-Xdn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="type" value="Author"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="dataPath" value="authors"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleCount" value="authors.@count"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="subTitleObject" value="%Author"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="rowSort" value="ref/name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="group" value="ref/name/initial"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="index" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="searchPath" value="ref/name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="add" value="#false"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jhn-J2-Ptk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4908" y="-1476"/>
+        </scene>
+        <!--Authors-->
+        <scene sceneID="xae-Rd-MHy">
+            <objects>
+                <tableViewController id="CZq-Np-51i" customClass="ModelListTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5yN-q5-IVt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="model" textLabel="F9d-jC-30I" style="IBUITableViewCellStyleDefault" id="3EI-ii-MYu" customClass="ModelTableCell" customModule="OKit">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3EI-ii-MYu" id="YSd-q5-tcU">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F9d-jC-30I">
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="imagePath" value="icon"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="ifB-sz-RoE" kind="show" identifier="model" id="pi9-9O-1mT"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="CZq-Np-51i" id="NrF-Ml-NxW"/>
+                            <outlet property="delegate" destination="CZq-Np-51i" id="5xO-rQ-ddG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Authors" id="7UP-p3-Pgd"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="type" value="Author"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="dataPath" value="authors"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleCount" value="authors.@count"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="subTitleObject" value="%Author"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="rowSort" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="group" value="initial"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="addName" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="index" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="groupSortAsc" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="searchPath" value="name"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FQy-rV-uNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4908" y="530"/>
+        </scene>
+        <!--Author-->
+        <scene sceneID="KVS-Qt-4Dd">
+            <objects>
+                <tableViewController id="ifB-sz-RoE" customClass="ModelDetailTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="uXE-Ye-zl1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="General" id="mfS-iC-sOX">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tfF-ig-98l" customClass="ModelTextCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tfF-ig-98l" id="FVK-Tn-g6T">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="textPath" value="name"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="ifB-sz-RoE" id="415-zf-8x2"/>
+                            <outlet property="delegate" destination="ifB-sz-RoE" id="TUR-rX-vhX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Author" largeTitleDisplayMode="always" id="qj4-7N-wxz"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="name"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCR-wu-Tmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5838" y="530"/>
+        </scene>
+        <!--Authors-->
+        <scene sceneID="vd2-9J-8w3">
+            <objects>
+                <tableViewController id="7Ub-xO-OUy" customClass="ModelSelectionTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8pe-Lh-v7a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="model" id="lY2-a9-vLR" customClass="ModelTableCell" customModule="OKit">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lY2-a9-vLR" id="2zY-D6-EqU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="imagePath" value="icon"/>
+                                </userDefinedRuntimeAttributes>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="7Ub-xO-OUy" id="PMG-Rb-qXz"/>
+                            <outlet property="delegate" destination="7Ub-xO-OUy" id="xsC-29-kga"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Authors" id="q9o-ub-iGT"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="type" value="Author"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="dataPath" value="authors"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="%Directory"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleCount" value="authors.@count"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="subTitleObject" value="%Author"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="rowSort" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="group" value="name/initial"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="index" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="groupSortAsc" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contextPath" value="directory&gt;/"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="searchPath" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="edit" value="#false"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="add" value="#false"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="autoClose" value="#false"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XEu-vX-VWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7697" y="-1477"/>
+        </scene>
+        <!--Authors-->
+        <scene sceneID="qNm-bQ-z43">
+            <objects>
+                <tableViewController id="qH3-BH-NMU" customClass="ModelSelectionTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zdb-j0-90t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="model" id="PvS-gg-kEM" customClass="ModelTableCell" customModule="OKit">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PvS-gg-kEM" id="fE5-qq-Sea">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="imagePath" value="icon"/>
+                                </userDefinedRuntimeAttributes>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="qH3-BH-NMU" id="1To-jL-FYj"/>
+                            <outlet property="delegate" destination="qH3-BH-NMU" id="dck-yF-fZL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Authors" id="bad-47-7Mp"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="dataPath" value="authors"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleCount" value="authors.@count"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="subTitleObject" value="%Author"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="rowSort" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="group" value="name/initial"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="index" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="groupSortAsc" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contextPath" value="directory&gt;/"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="searchPath" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="add" value="#false"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="edit" value="#false"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Authors"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="selectionPath" value="author"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4jb-Dd-QHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5838" y="-258"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fbE-yy-25j">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ghr-d9-8Uy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ESR-M9-NE7">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7Ub-xO-OUy" kind="relationship" relationship="rootViewController" id="DFA-wh-qol"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2hs-UU-xV1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6826" y="-1477"/>
+        </scene>
+        <!--Author-->
+        <scene sceneID="nhv-GF-b8l">
+            <objects>
+                <tableViewController id="FtV-2M-nmC" customClass="ModelDetailTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="LfK-cl-LXn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="General" id="bji-Gj-bZ7">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MWK-4c-hKr" customClass="ModelTableCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MWK-4c-hKr" id="RIy-v4-3eK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="refKey"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="dBD-DY-Bfn" customClass="ModelTableCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dBD-DY-Bfn" id="lOj-Qv-v2e">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="ref/name"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="FtV-2M-nmC" id="fOp-If-cIx"/>
+                            <outlet property="delegate" destination="FtV-2M-nmC" id="51m-lm-jzk"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Author" largeTitleDisplayMode="always" id="wCt-8h-237">
+                        <barButtonItem key="rightBarButtonItem" title="Select" id="2yY-Sp-TsU">
+                            <connections>
+                                <segue destination="Ghr-d9-8Uy" kind="presentation" id="bHE-ND-mkO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="name"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uop-4V-TMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5838" y="-1128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="M2q-WX-oqi">
+            <objects>
+                <navigationController storyboardIdentifier="menu" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="7ee-FO-osg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t2y-g4-t3L">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d6V-hT-vFj">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="6Oe-Lr-6ZC" kind="relationship" relationship="rootViewController" id="vLD-RT-O2F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kfg-ow-N2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-377" y="-258"/>
+        </scene>
+        <!--Authors-->
+        <scene sceneID="kuJ-bH-KUs">
+            <objects>
+                <tableViewController id="aV1-Ej-E2n" customClass="ModelMenuTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="d6x-IB-LCQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="model" textLabel="Cnp-dL-HBI" style="IBUITableViewCellStyleDefault" id="rMT-QS-20y" customClass="ModelTableCell" customModule="OKit">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rMT-QS-20y" id="Z1V-q7-tLk">
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cnp-dL-HBI">
+                                            <rect key="frame" x="16" y="0.0" width="291" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="imagePath" value="icon"/>
+                                </userDefinedRuntimeAttributes>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="aV1-Ej-E2n" id="GpW-Cc-t0y"/>
+                            <outlet property="delegate" destination="aV1-Ej-E2n" id="3XV-4e-OwU"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7RP-ko-a4k"/>
+                        <barButtonItem title="Home" id="Wzx-vy-9F0">
+                            <connections>
+                                <action selector="navigateToHomeWithSender:" destination="aV1-Ej-E2n" id="uYC-AV-TbT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="xLo-um-x3D"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Authors" id="7ka-wg-wic"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="type" value="Author"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="dataPath" value="authors"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleCount" value="authors.@count"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="subTitleObject" value="%Author"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="rowSort" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="group" value="name/initial"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="addName" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="index" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="groupSortAsc" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="searchPath" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contextPath" value="group"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="rowIdentifier" value="author"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mCW-uu-1wT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1366" y="1321"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="TiE-WR-RMI">
+            <objects>
+                <tabBarController storyboardIdentifier="author" id="QwO-sK-inQ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j3J-r4-oUm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ljl-AY-oko" kind="relationship" relationship="viewControllers" id="Euf-k3-1hb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ru7-DI-lgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2225" y="1322"/>
+        </scene>
+        <!--Author-->
+        <scene sceneID="kxc-3M-2fQ">
+            <objects>
+                <tableViewController id="SK8-wY-IIk" customClass="ModelDetailTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="M1K-fg-az8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="General" id="ZlS-Jb-8tE">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aLi-BR-dFH" customClass="ModelTextCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aLi-BR-dFH" id="rAU-v5-kqc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="name"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="textPath" value="name"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="SK8-wY-IIk" id="y4H-1a-4YS"/>
+                            <outlet property="delegate" destination="SK8-wY-IIk" id="nrL-03-gYe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Author" largeTitleDisplayMode="always" id="HEd-C9-CKY">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="9wB-FC-sDG" customClass="ModelMenuBarButtonItem" customModule="OKit"/>
+                    </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="name"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KiV-zS-Xuo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3932" y="1323"/>
+        </scene>
+        <!--Authors-->
+        <scene sceneID="ABT-hW-3Ik">
+            <objects>
+                <navigationController id="Ljl-AY-oko" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Authors" image="book" id="2tE-KE-FnP"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PdS-0J-Pcg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SK8-wY-IIk" kind="relationship" relationship="rootViewController" id="uKd-pP-IoP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XKC-ot-4w3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3084" y="1323"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="40N-We-bSV">
+            <objects>
+                <tabBarController id="q3j-a4-bZS" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QiV-iD-NCo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xcj-oI-pS2" kind="relationship" relationship="viewControllers" id="aQl-sb-yI6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w0E-M3-r0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492" y="2857"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="0Tx-IL-X7C">
+            <objects>
+                <tableViewController id="WhL-qG-2NC" customClass="ModelSettingsTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="bRz-cW-t5O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="General" id="KWz-Qr-2UH">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rpx-Ad-jnl" customClass="ModelSwitchCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rpx-Ad-jnl" id="PWl-oA-zTF">
+                                            <rect key="frame" x="0.0" y="0.0" width="308" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="#Dark Mode"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="onPath" value="darkMode"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Security" id="Cd7-8c-Rd7">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hLF-kF-GyL" customClass="ModelSwitchCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hLF-kF-GyL" id="vwe-Vp-SC4">
+                                            <rect key="frame" x="0.0" y="0.0" width="308" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="%Encryption"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="onPath" value="encryption"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="VEG-L3-Slu" customClass="ModelSwitchCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="199.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VEG-L3-Slu" id="HTy-XY-NLH">
+                                            <rect key="frame" x="0.0" y="0.0" width="308" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="%Protection"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="onPath" value="protection"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="1Wv-2V-SaV" detailTextLabel="CaP-bc-GNw" style="IBUITableViewCellStyleValue1" id="Oon-Pu-R4h" customClass="ModelTableCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="243.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oon-Pu-R4h" id="Wh7-6X-snI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Wv-2V-SaV">
+                                                    <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CaP-bc-GNw">
+                                                    <rect key="frame" x="315" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="path" value="%Request Authorization"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="onPath" value="marked"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="detailPath" value="protectionTimeout/ref/name"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectNextRow" value="#1"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mCn-2P-pxA" customClass="ModelPickerCell" customModule="OKit">
+                                        <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mCn-2P-pxA" id="dR0-20-Bj2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heightDisplay" value="#0"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heightEdit" value="#0"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="dataPath" value="timeouts"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="namePath" value="name"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="selectionPath" value="protectionTimeout"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="WhL-qG-2NC" id="q3L-Pv-4iI"/>
+                            <outlet property="delegate" destination="WhL-qG-2NC" id="Ex2-cu-Dwt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="dVH-J0-VJV">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="Z4J-pC-UZr">
+                            <connections>
+                                <action selector="onCloseTap" destination="WhL-qG-2NC" id="sBh-Hv-c4c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contextPath" value="settings&gt;/"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="edit" value="#false"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="editAlways" value="#true"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BiS-Z7-qsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2225" y="2857"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="NvI-Lk-XhQ">
+            <objects>
+                <navigationController id="xcj-oI-pS2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="book" id="YCK-uk-lgd"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Um-pQ-fJ6">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WhL-qG-2NC" kind="relationship" relationship="rootViewController" id="9VL-vb-nW9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xHQ-9f-mRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1366" y="2857"/>
+        </scene>
+        <!--Backups-->
+        <scene sceneID="5WR-Bo-uFh">
+            <objects>
+                <tableViewController id="iAj-sG-qN1" customClass="ModelSecureBackupTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D5s-q8-zJU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="iAj-sG-qN1" id="Vq1-jy-SUG"/>
+                            <outlet property="delegate" destination="iAj-sG-qN1" id="NYy-yg-ZDg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Backups" largeTitleDisplayMode="always" id="Di4-ZA-gk2">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="hCo-HC-bss">
+                            <connections>
+                                <action selector="onCloseTap" destination="iAj-sG-qN1" id="CMa-gz-9IE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d6J-Qq-ZkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="2095"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="2wf-4E-SXb">
+            <objects>
+                <navigationController id="21u-E1-Ak7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="book" id="KzH-Rb-bDv"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pTZ-lh-A88">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iAj-sG-qN1" kind="relationship" relationship="rootViewController" id="64i-7Q-3aY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OhA-3Q-dpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031" y="2095"/>
+        </scene>
+        <!--Dates-->
+        <scene sceneID="aeR-5L-17b">
+            <objects>
+                <tableViewController id="vgo-Tb-f7s" customClass="ModelListTableController" customModule="OKit" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bEg-Um-M8r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="model" textLabel="Z35-gh-Q6d" style="IBUITableViewCellStyleDefault" id="lvk-qe-NZl" customClass="ModelDateCell" customModule="OKit">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lvk-qe-NZl" id="DIG-R4-9Ce">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z35-gh-Q6d">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="path" value="date/formatDate"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="datePath" value="date"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="modePath" value="#2"/>
+                                </userDefinedRuntimeAttributes>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="vgo-Tb-f7s" id="GUc-eU-H7X"/>
+                            <outlet property="delegate" destination="vgo-Tb-f7s" id="4uX-Al-rOr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Dates" id="u89-Oa-WAo"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="dataPath" value="dates"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titlePath" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleCount" value="dates.@count"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="subTitleObject" value="%Date"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="rowSort" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="searchPath" value="date.formatDate"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="Dates"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="editAlways" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="type" value="BookDate"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="addAppend" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="deletePrompt" value="#false"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="reorder" value="#true"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="forceListUpdate" value="#true"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jJd-at-f3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4889" y="-260"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="book" width="25" height="25"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="pms-tE-Dw8"/>
+        <segue reference="bHE-ND-mkO"/>
+    </inferredMetricsTieBreakers>
+</document>
