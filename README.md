@@ -34,6 +34,21 @@
 - **Control**: Model controls and model cells are enabled for bindings, where latter inherits from  `ModelTableCell` or subclasses
 - **Inspectable**: Model controllers and model control are extended with `@IBInspectable` properties, maintainable in Interface Builder  
 
+## Usage
+
+### Installation: CocoaPods
+
+OKit is available through CocoaPods. To install it, add the following lines to your Podfile:
+
+```
+  use_frameworks!
+  pod 'OKit'
+```
+
+### Reference Example: Bookshop
+
+The full-fledged OKit example project [Bookshop](/Examples/Bookshop) is available, showcasing every feature of the `OKit` framework.
+
 ## Model
 
 ### Model Definition
@@ -722,8 +737,3 @@ A help view can be connected to `IBOutlet helpView`.
 ## Model Inheritance
 
 Any model entities, controllers and controller can be inherited and functions overridden to change default behavior, as most definitions are marked as `open` and `public`. 
-
-# OKit Demo: Bookshop
-
-A full-fledged example project is available, showcasing every feature of the `OKit` framework. 
-It can be found in folder `/Examples/Bookshop`.
