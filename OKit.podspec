@@ -8,6 +8,6 @@ Pod::Spec.new do |spec|
   spec.author        = { "Oliver Klemenz" => "oklemenz@gmail.com" }
   spec.platform      = :ios, "12.0"
   spec.source        = { :git => "https://github.com/oklemenz/OKit.git", :tag => "#{spec.version}" }
-  spec.source_files  = "OKit/**"
+  spec.source_files  = "OKit/**/*.{swift,h,png}"
   spec.swift_version = "5"
 end
