@@ -49,7 +49,7 @@ OKit is available through CocoaPods. To install it, add the following lines to y
 
 The full-fledged OKit example project [Bookshop](/Examples/Bookshop) is available, showcasing every feature of the `OKit` framework.
 
-![OKit Demo Bookshop](okit_demo.gif)
+> ![OKit Demo Bookshop](okit_demo.gif)
 
 ## Model
 
