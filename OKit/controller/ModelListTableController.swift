@@ -202,7 +202,7 @@ open class ModelListTableController : ModelBaseTableController, UISearchBarDeleg
     private func addEntityToSection(_ entity: ModelEntity, append: Bool? = true, sort: Bool = false) -> Bool {
         var sectionAdd = false
         var groupValue = "\(entity.get(group) ?? "")"
-        let groupNameValue = !groupName.isEmpty ? entity.getString(groupName) : groupValue
+        let groupNameValue = !groupName.isEmpty ? (entity.getString(groupName) ?? "") : groupValue
         if let section = sectionNames.first(where: { $0.value == groupNameValue })?.key {
             groupValue = section
         } else {

@@ -1024,11 +1024,11 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="titleCount" value="authors.@count"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="subTitleObject" value="%Author"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="rowSort" value="name"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="group" value="initial"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="addName" value="name"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="index" value="#true"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="groupSortAsc" value="#true"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="searchPath" value="name"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="group" value="name/initial"/>
                     </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQy-rV-uNh" userLabel="First Responder" sceneMemberID="firstResponder"/>

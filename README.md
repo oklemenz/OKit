@@ -469,6 +469,7 @@ protectionTimeout | Binding path to  protection timeout (in minutes) | Yes | Co
 protectionCover | Binding path to protection cover visibility flag | Yes | Controller | Bool | #true
 protectionImage | Binding path to protection cover image | Yes | Controller | UIImage |
 protectionText | Binding path to protection cover text | Yes | Controller | String |
+menuHideStatusBar | Binding path to flag, specifying if status bar is hidden when  | Yes | Controller | String |
 
 ### Protection
 

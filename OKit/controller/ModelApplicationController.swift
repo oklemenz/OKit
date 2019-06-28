@@ -126,6 +126,7 @@ open class ModelApplicationContoller: UIViewController, UIGestureRecognizerDeleg
             resetProtectionCover()
         }
     }
+    @IBInspectable open var menuHideStatusBar: String = "#false"
 
     // MARK: - Context
     internal var internalContext: ModelEntity?
@@ -417,7 +418,9 @@ open class ModelApplicationContoller: UIViewController, UIGestureRecognizerDeleg
         case .began:
             endEditing()
             UIView.animate(withDuration: TimeInterval(duration), delay: 0.0, options: .curveEaseInOut, animations: {
-                self.isStatusBarHidden = true
+                if self.effectiveContext?.getBool(self.menuHideStatusBar) == true {
+                    self.isStatusBarHidden = true
+                }
                 self.menuController.view.layer.shadowOpacity = Float(self.shadow)
             }, completion: nil)
             break
@@ -461,7 +464,9 @@ open class ModelApplicationContoller: UIViewController, UIGestureRecognizerDeleg
         endEditing()
         menuVisible = true
         UIView.animate(withDuration: animated ? TimeInterval(duration) : 0.0, delay: 0.0, options: .curveEaseInOut, animations: {
-            self.isStatusBarHidden = true
+            if self.effectiveContext?.getBool(self.menuHideStatusBar) == true {
+                self.isStatusBarHidden = true
+            }
             self.menuCoverView.alpha = self.fade
             let frame = self.menuController.view.frame
             self.menuController.view.center.x = frame.width / 2
