@@ -118,7 +118,8 @@ open class ModelBaseTableController: ModelController, ModelSelectionDelegate {
         super.viewWillAppear(animated)
         navBarTapGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(self.navigationBarTapped(_:)))
         navBarTapGestureRecognizer?.cancelsTouchesInView = false
-        if let navBarTapGestureRecognizer = navBarTapGestureRecognizer {            navigationController?.navigationBar.addGestureRecognizer(navBarTapGestureRecognizer)
+        if let navBarTapGestureRecognizer = navBarTapGestureRecognizer {
+            navigationController?.navigationBar.addGestureRecognizer(navBarTapGestureRecognizer)
         }
         update()
     }
@@ -131,7 +132,8 @@ open class ModelBaseTableController: ModelController, ModelSelectionDelegate {
 
     override open func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        if let navBarTapGestureRecognizer = navBarTapGestureRecognizer {            navigationController?.navigationBar.removeGestureRecognizer(navBarTapGestureRecognizer)
+        if let navBarTapGestureRecognizer = navBarTapGestureRecognizer {
+            navigationController?.navigationBar.removeGestureRecognizer(navBarTapGestureRecognizer)
         }
     }
     
