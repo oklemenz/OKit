@@ -3,7 +3,7 @@
 //  OKit
 //
 //  Created by Klemenz, Oliver on 12.03.19.
-//  Copyright © 2019 Klemenz, Oliver. All rights reserved.
+//  Copyright © 2020 Klemenz, Oliver. All rights reserved.
 //
 
 import Foundation
@@ -22,7 +22,7 @@ open class ModelBarButtonItem: UIBarButtonItem {
     internal var managed: Bool = false
     
     internal var internalContext: ModelEntity?
-    open var context: ModelEntity? {
+    open var modelContext: ModelEntity? {
         get {
             return internalContext ?? Model.getDefault()
         }
@@ -33,9 +33,9 @@ open class ModelBarButtonItem: UIBarButtonItem {
 
     open var effectiveContext: ModelEntity? {
         if !contextPath.isEmpty {
-            return context?.resolve(contextPath)
+            return modelContext?.resolve(contextPath)
         }
-        return context
+        return modelContext
     }
     
     @IBInspectable open var contextPath: String = "" {
@@ -55,7 +55,7 @@ open class ModelBarButtonItem: UIBarButtonItem {
     }
     
     open func context(_ context: ModelEntity?, owner: AnyObject?) {
-        self.context = context
+        self.modelContext = context
         if let owner = owner as? ModelBarButtonItemDelegate, !tapPath.isEmpty {
             target = owner
             action = NSSelectorFromString("didTapBarButtonItem:")

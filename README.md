@@ -111,7 +111,7 @@ Model.initialize(window, secure: true) {
 
 If name is omitted, the model is registered as default model with the implicit name `default`.
 The registration shall be done in  `application:didFinishLaunchingWithOptions` of `AppDelegate`.
-Model instances can be stored in the application context  for later access.
+Model instances can be stored in the application context for later access.
 
 ### Store Model
 

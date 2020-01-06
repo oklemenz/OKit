@@ -3,7 +3,7 @@
 //  OKit
 //
 //  Created by Klemenz, Oliver on 12.03.19.
-//  Copyright © 2019 Klemenz, Oliver. All rights reserved.
+//  Copyright © 2020 Klemenz, Oliver. All rights reserved.
 //
 
 import Foundation
@@ -88,7 +88,7 @@ public extension String {
     }
     
     var nameInitials: String? {
-        var parts = components(separatedBy: " ").filter { (part) -> Bool in
+        let parts = components(separatedBy: " ").filter { (part) -> Bool in
             return part.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) != ""
         }
         if parts.count >= 2 {

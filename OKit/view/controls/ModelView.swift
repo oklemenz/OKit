@@ -3,7 +3,7 @@
 //  OKit
 //
 //  Created by Klemenz, Oliver on 20.03.19.
-//  Copyright © 2019 Klemenz, Oliver. All rights reserved.
+//  Copyright © 2020 Klemenz, Oliver. All rights reserved.
 //
 
 import Foundation
@@ -26,9 +26,9 @@ extension UIView: ModelContext {
     
     // MARK: - Context
     @objc
-    internal var context: ModelEntity? {
+    internal var modelContext: ModelEntity? {
         get {
-            return value(forKey: "internalContext") as? ModelEntity ?? superview?.context ?? Model.getDefault()
+            return value(forKey: "internalContext") as? ModelEntity ?? superview?.modelContext ?? Model.getDefault()
         }
         set {
             setValue(newValue, forKey: "internalContext")
@@ -36,7 +36,7 @@ extension UIView: ModelContext {
     }
     
     open func context(_ context: ModelEntity?, owner: AnyObject?) {
-        self.context = context
+        self.modelContext = context
         for child in subviews {
             child.context(context, owner: owner)
         }
@@ -46,19 +46,19 @@ extension UIView: ModelContext {
     open var effectiveContext: ModelEntity? {
         if let contextPath = value(forKey: "contextPath") as? String {
             if !contextPath.isEmpty {
-                return context?.resolve(contextPath)
+                return modelContext?.resolve(contextPath)
             }
         }
-        return context
+        return modelContext
     }
     
     open var contexts: [ModelEntity] {
         if let contextPath = value(forKey: "contextPath") as? String {
             if !contextPath.isEmpty {
-                return context?.resolve(path: contextPath) ?? []
+                return modelContext?.resolve(path: contextPath) ?? []
             }
         }
-        return context != nil ? [context!] : []
+        return modelContext != nil ? [modelContext!] : []
     }
 }
 
@@ -220,7 +220,7 @@ extension UITableViewCell {
 extension UITableView {
     
     override open func context(_ context: ModelEntity?, owner: AnyObject?) {
-        self.context = context
+        self.modelContext = context
         for child in subviews where !(child is UITableViewCell) {
             child.context(context, owner: owner)
         }

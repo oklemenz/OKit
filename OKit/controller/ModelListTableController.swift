@@ -3,7 +3,7 @@
 //  OKit
 //
 //  Created by Klemenz, Oliver on 27.02.19.
-//  Copyright © 2019 Klemenz, Oliver. All rights reserved.
+//  Copyright © 2020 Klemenz, Oliver. All rights reserved.
 //
 
 import Foundation
@@ -901,7 +901,7 @@ open class ModelListTableController : ModelBaseTableController, UISearchBarDeleg
     
     // MARK: - Invalidation
     override open func refresh(_ entity: ModelEntity, key: String? = nil, owner: UIViewController?) -> Bool {
-        let contexts = context?.resolve(path: contextPath, subPath: dataPath)
+        let contexts = modelContext?.resolve(path: contextPath, subPath: dataPath)
         if ((contexts?.firstIndex(where: { (entity) -> Bool in
             return entity.isUnmanaged()
         })) != nil) {

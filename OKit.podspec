@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name          = "OKit"
-  spec.version       = "1.0.2"
+  spec.version       = "1.0.3"
   spec.summary       = "Easy to use application framework for Swift, to create apps based on models and storyboards with (almost) no code."
   spec.description   = "OKit is a Swift framework to build model based apps, based on inspectable properties used to bind storyboard controllers/controls to codable Swift models"
   spec.homepage      = "https://github.com/oklemenz/OKit"

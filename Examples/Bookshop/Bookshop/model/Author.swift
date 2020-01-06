@@ -3,7 +3,7 @@
 //  Bookshop
 //
 //  Created by Klemenz, Oliver on 25.06.19.
-//  Copyright © 2019 Klemenz, Oliver. All rights reserved.
+//  Copyright © 2020 Klemenz, Oliver. All rights reserved.
 //
 
 import Foundation
@@ -14,5 +14,5 @@ class Author: ModelEntity, Codable {
     
     var id: String!
     var name: String = "<New Author>"
-    
+
 }

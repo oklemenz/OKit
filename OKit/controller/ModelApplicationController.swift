@@ -3,7 +3,7 @@
 //  OKit
 //
 //  Created by Klemenz, Oliver on 28.03.19.
-//  Copyright © 2019 Klemenz, Oliver. All rights reserved.
+//  Copyright © 2020 Klemenz, Oliver. All rights reserved.
 //
 
 import Foundation
@@ -130,9 +130,9 @@ open class ModelApplicationContoller: UIViewController, UIGestureRecognizerDeleg
 
     // MARK: - Context
     internal var internalContext: ModelEntity?
-    override open var context: ModelEntity? {
+    override open var modelContext: ModelEntity? {
         get {
-            return internalContext ?? parent?.context ?? Model.getDefault()
+            return internalContext ?? parent?.modelContext ?? Model.getDefault()
         }
         set {
             internalContext = newValue
@@ -141,14 +141,14 @@ open class ModelApplicationContoller: UIViewController, UIGestureRecognizerDeleg
     }
     
     override open func resetContext() {
-        self.context = nil
+        self.modelContext = nil
         menuController.resetContext()
         contentController?.resetContext()
         update()
     }
     
     override open func context(_ context: ModelEntity?, owner: AnyObject?) {
-        self.context = context
+        self.modelContext = context
         menuController.context(context, owner: owner)
         contentController?.context(context, owner: owner)
         update()
@@ -156,9 +156,9 @@ open class ModelApplicationContoller: UIViewController, UIGestureRecognizerDeleg
     
     open var effectiveContext: ModelEntity? {
         if !contextPath.isEmpty {
-            return context?.resolve(contextPath)
+            return modelContext?.resolve(contextPath)
         }
-        return context
+        return modelContext
     }
     
     // MARK: - Inspectable
@@ -725,7 +725,7 @@ open class ModelApplicationContoller: UIViewController, UIGestureRecognizerDeleg
     
     // MARK: - Invalidation
     override open func refresh(_ entity: ModelEntity, key: String? = nil, owner: UIViewController?) -> Bool {
-        let contexts = context?.resolve(path: contextPath)
+        let contexts = modelContext?.resolve(path: contextPath)
         guard contexts?.contains(entity) == true else {
             return false
         }
