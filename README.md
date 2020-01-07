@@ -741,3 +741,4 @@ A help view can be connected to `IBOutlet helpView`.
 ## Model Inheritance
 
 Any model entities, controllers and controller can be inherited and functions overridden to change default behavior, as most definitions are marked as `open` and `public`. 
+

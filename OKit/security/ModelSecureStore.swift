@@ -2,8 +2,8 @@
 //  ModelSecureStore.swift
 //  OKit
 //
-//  Created by Klemenz, Oliver on 20.01.17.
-//  Copyright © 2017 Klemenz, Oliver. All rights reserved.
+//  Created by Oliver Klemenz on 20.01.17.
+//  Copyright © 2017 Oliver Klemenz. All rights reserved.
 //
 
 import Foundation

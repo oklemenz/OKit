@@ -2,8 +2,8 @@
 //  ModelKeychainAccess.swift
 //  OKit
 //
-//  Created by Klemenz, Oliver on 01.03.19.
-//  Copyright © 2020 Klemenz, Oliver. All rights reserved.
+//  Created by Oliver Klemenz on 01.03.19.
+//  Copyright © 2020 Oliver Klemenz. All rights reserved.
 //
 import Foundation
 
